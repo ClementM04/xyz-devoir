@@ -5,7 +5,7 @@
 
             <div class="grid">
                 @foreach($categories as $category)
-                    <a href="{{ route('app.categories.show', ['category' => $category->id]) }}" class="block image">
+                    <a href="{{ route('app.categories.show', ['category' => $category]) }}" class="block image">
                         <div class="description">
                             <div>
                                 {{--  --}}

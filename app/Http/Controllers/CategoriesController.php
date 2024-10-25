@@ -13,9 +13,9 @@ class CategoriesController
         ]);
     }
 
-    public function show($category) : View {
-
+    public function show(Categories $category) : View {
         return view('app.categories.show', [
+            'tracks' => $category->tracks()->withCount('likes')->orderBy('likes_count', 'desc')->paginate(10),
             'category' => $category
         ]);
     }

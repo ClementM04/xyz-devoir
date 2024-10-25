@@ -36,8 +36,8 @@
                 @enderror
 
                 <div>
-                    <label for="category_id">Catégorie</label>
-                    <select name="category_id" id="category_id">
+                    <label for="categories_id">Catégorie</label>
+                    <select name="categories_id" id="categories_id">
                         <option value="" selected disabled>Sélectionner une catégorie</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -45,7 +45,7 @@
                     </select>
                 </div>
 
-                @error('category_id')
+                @error('categories_id')
                 <p class="error-message">{{ $message }}</p>
                 @enderror
 
