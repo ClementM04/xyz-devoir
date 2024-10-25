@@ -13,7 +13,10 @@ class CategoriesController
         ]);
     }
 
-    public function show() : View {
-        return view('app.categories.show');
+    public function show($category) : View {
+
+        return view('app.categories.show', [
+            'category' => $category
+        ]);
     }
 }

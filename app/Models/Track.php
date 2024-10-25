@@ -21,6 +21,7 @@ class Track extends Model
         'title',
         'artist',
         'url',
+        'category_id',
     ];
 
     /**
@@ -49,6 +50,11 @@ class Track extends Model
         return $this->belongsTo(Week::class);
     }
 
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Categories::class);
+    }
+
     /**
      * Get current week tracks.
      */
@@ -67,4 +73,6 @@ class Track extends Model
             ->orderBy('likes_count', 'desc')
             ->orderBy('created_at', 'asc');
     }
+
+
 }

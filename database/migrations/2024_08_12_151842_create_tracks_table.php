@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Categories;
 use App\Models\User;
 use App\Models\Week;
 use Illuminate\Database\Migrations\Migration;
@@ -17,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Week::class)->constrained('weeks')->onDelete('cascade');
             $table->foreignIdFor(User::class, 'user_id')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignIdFor(Categories::class, 'category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->string('artist');
             $table->string('title');
             $table->string('url');

@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'update'])->name('app.profile.update');
 
     Route::get('/categories', [CategoriesController::class, 'categories'] )->name('app.categories.index');
-    Route::get('/categories/show', [CategoriesController::class, 'show'] )->name('app.categories.show');
+    Route::get('/categories/show/{category}', [CategoriesController::class, 'show'] )->name('app.categories.show');
 
     Route::fallback(fn () => abort(404));
 });
