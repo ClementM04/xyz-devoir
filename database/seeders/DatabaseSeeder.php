@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
 
         // Create content
         User::factory()
-            ->count(2)
+            ->count(15)
             ->has(
                 Track::factory(config('app.tracks_per_week'))
-                    ->state(new Sequence(fn () => ['week_id' => rand(1, 2)]))
+                    ->state(new Sequence(fn () => ['week_id' => rand(2, 7)]))
                     ->sample()
             )
             ->has(Code::factory(config('app.codes_count')))

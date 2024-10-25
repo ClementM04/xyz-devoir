@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Categories;
 use App\Models\User;
 use App\Models\Week;
 use Database\Samples\TrackSamples;
@@ -25,6 +26,7 @@ class TrackFactory extends Factory
         return [
             'user_id' => User::factory(),
             'week_id' => Week::factory(),
+            'categories_id' => Categories::factory(),
             'artist' => fake()->name(),
             'title' => fake()->sentence(2),
             'url' => fake()->randomElement(['https://youtube.com/watch?v=ID', 'https://soundcloud/USER/TRACK']),
