@@ -3,6 +3,9 @@
         <li @class(['current' => request()->routeIs('app.home')])>
             <a href="{{ route('app.home') }}"><span class="logo"><h1>XYZ</h1></span></a>
         </li>
+        <li @class(['current' => request()->routeIs('app.categories.*')])>
+            <a href="{{ route('app.categories.index') }}">Catégories</a>
+        </li>
 
         @auth
         <li @class(['current' => request()->routeIs('app.weeks.*', 'app.tracks.show')])>
@@ -16,6 +19,7 @@
             <a href="{{ route('app.tracks.create') }}">+ Contribuer</a>
         </li>
         @endauth
+
     </ul>
 
     @auth
