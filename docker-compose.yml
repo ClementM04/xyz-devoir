@@ -6,7 +6,7 @@ services:
       context: './.docker'
       dockerfile: Dockerfile
     image: projet-xyz/app
-    container_name: xyz-app
+    container_name: xyz-app-devoir
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     ports:
@@ -24,7 +24,7 @@ services:
       - maildev
   mysql:
     image: 'mysql/mysql-server:8.0'
-    container_name: xyz-db
+    container_name: xyz-db-devoir
     ports:
       - 3306:3306
     environment:
@@ -42,7 +42,7 @@ services:
       - xyz
   maildev:
     image: 'maildev/maildev:latest'
-    container_name: xyz-mail
+    container_name: xyz-mail-devoir
     ports:
       - '1025:1025'
       - '8025:1080'
@@ -50,7 +50,7 @@ services:
       - xyz
   pma:
     image: 'phpmyadmin:latest'
-    container_name: xyz-pma
+    container_name: xyz-pma-devoir
     ports:
       - '8080:80'
     environment:
@@ -63,7 +63,7 @@ services:
       - mysql
   kanboard:
     image: kanboard/kanboard:v1.2.39
-    container_name: xyz-kanboard
+    container_name: xyz-kanboard-devoir
     ports:
       - "8045:80"
     environment:
